@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    != messages('message', locals)
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1.h2 #{customers}
+    -var size= customer_res.length
+      if size == 0
+        h6.alert-no-cus-error No Customer Found 
+      else 
+        ul.list-group
+          each customer, i in customer_res
+            if user.fullname==customer.Marketer
+              li.list-group-item
+                a.customerlist(href="/customer/details/"+customer._id)= customer.Firstname +" "+ customer.Lastname +" "+ customer.Email
+                if user
+                  if user.id=customer.id
+                    a.btn.editbtn.btn-info.btn-sm(href="/customer/details/edit/"+customer._id)
+                      span(data-feather='edit')
+                      |                   edit
+                  

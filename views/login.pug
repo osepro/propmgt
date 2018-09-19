@@ -1,0 +1,17 @@
+extends layout-home
+
+block content
+  form.form-signin(method='POST', action='/users/login')
+    != messages('message', locals)
+    img(src='/img/akefada.png')
+    h1.h3.mb-3.mt-3.font-weight-normal #{pageheader}
+    br
+    input.form-control(name='username',type='text',placeholder='Username', autofocus='')
+    input.form-control(name='password',type='password',placeholder='Password', autofocus='')
+    .checkbox.mb-3
+      label
+        input(type='checkbox', value='remember-me')
+        |  Remember me      
+    input.btn.btn-primary.btn-mainlogin(type='submit',value='Login') 
+    a.forgotpsswd(href='#')  Forgot password?  
+    p.mt-5.mb-3.text-muted © Incode-Nation. All rights reserved

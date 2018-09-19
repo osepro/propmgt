@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    if errors
+      each error,i in errors 
+        div(class="alert alert-danger") #{error.msg}
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1.h2 #{pageheader}
+    form(method='POST', action='/customer/register')
+      #form-group
+        label First name:
+        input.form-control(name='firstname',type='text')
+        input(type='hidden', name='mktname', value=user.fullname)
+        br
+      #form-group
+        label Last name:
+        input.form-control(name='lastname',type='text')
+        br
+      #form-group
+        label Email:
+        input.form-control(name='email',type='text')
+        br
+      #form-group
+        label Phone No:
+        input.form-control(name='phoneno',type='text')
+        br
+      #form-group
+        label Current Address:
+        input.form-control(name='currentaddress',type='text')
+        br
+      #form-group
+        label Plot Size:
+        input.form-control.plotsize(name='plotsize',type='text',value='1' required)
+        br
+      #form-group
+        label Plot Location:
+        br
+        select.selecLoc.form-control(name='propertylocation')
+          option Select Location
+          option(value='Agbara Igbesa') Agbara Igbesa
+          option(value='Lakowe/Lekki') Lakowe/Lekki
+          option(value='Agbowa/Ikorodu') Agbowa/Ikorodu
+          option(value='Mowe/Ofada') Mowe/Ofada
+          option(value='Ilamija Ibeju Lekki/Epe') Ilamija Ibeju Lekki/Epe
+        br
+      #form-group
+        label Property Cost:
+        input.form-control.propcost(name='propertycost',type='text' readonly='')
+        br
+      #form-group
+        .radio
+          label
+          input.optradio(type='radio', name='optradio',value='InstallmentalPayment' required)
+          |                   Installmental Payment
+        .radio
+          label
+            input.optradio(type='radio', name='optradio',value='OutrightPayment' required)
+            |                    Outright Payment
+        br
+      #form-group.initialgrp
+        label Initial Deposit:
+        input.form-control.initdeposit(name='initialdeposit',type='number',value=0)
+        br
+      #form-group.initialgrp
+        label Balance:
+        input.form-control.balance.mb-3(name='balance',type='text',value=0 readonly='')
+        br  
+      input.btn.btn-primary(type='submit',value='Add New Customer')

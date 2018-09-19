@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    if errors
+      each error,i in errors 
+        div(class="alert alert-danger") #{error.msg}
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1.h2 #{pageheader}
+    form(method='POST', action='/users/dashboard/newuser')
+      #form-group
+        label Full Name:
+        input.form-control(name='fullname',type='text')
+        br
+      #form-group
+        label Email:
+        input.form-control(name='email',type='text')
+        br
+      #form-group
+        label Phone No:
+        input.form-control(name='phoneno',type='text')
+        br  
+      #form-group
+          label Username:
+          input.form-control(name='username',type='text')
+          br  
+      #form-group
+        label Password:
+        input.form-control(name='password',type='password')
+        br
+      #form-group
+        label Confirm Password:
+        input.form-control(name='cpassword',type='password')
+        br
+      
+      input.btn.btn-primary(type='submit',value='Add New Marketer')

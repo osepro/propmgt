@@ -1,0 +1,125 @@
+.main-container
+{
+  padding-top: 48px;
+}
+.topheader
+{
+  color: #ffffff;
+}
+.editbtn
+{
+  float: right;
+  font-weight: bold;
+  background: #666666;
+  border: solid 1px #FFFFFF;
+}
+.paybtn
+{
+  float: right;
+  font-weight: bold;
+  background: #0099CC;
+  border: solid 1px #FFFFFF;
+}
+.paybtn:hover{
+  float: right;
+  font-weight: bold;
+  background: #6996AD;
+  border: solid 1px #FFFFFF;
+
+}
+.customerlist li
+{
+  list-style: none;
+}
+.customerlist:hover
+{
+  text-decoration: none;
+}
+.customerlist
+{
+  color: #333;
+}
+.delete-customer
+{
+  margin-left: 5px;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-pencil:before {
+    content: "\270f";
+}
+.alert-error
+{
+  color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-no-cus-error
+{
+  color: #721c24;
+  background-color: #f8d7da;
+  border:solid 1px #ccc;
+  padding: 12px;
+  border-radius: 5px;
+}
+.alert-success_msg
+{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.btn-mainlogin
+{
+  width: 100%;
+}
+.forgotpsswd
+{
+  color: #000000;
+}
+.forgotpsswd:hover
+{
+  text-decoration: none;
+}
+.alert-success
+{
+  margin-top: 20px;
+}
+.paid
+{
+  height: 40px;
+  background: #50C878;
+  padding:8px;
+  border-radius: 5px 0 0 5px;
+}
+.balance
+{
+  height: 40px;
+  background: #FF0000;
+  padding:8px;
+  border-radius: 0 5px 5px 0;
+}
+.paidlink
+{
+  color: #000000 !important;
+}
+.initialgrp
+{
+  display: none;
+}
+.initpaid
+{
+  color: green;
+}
+.initbal
+{
+  color:red;
+}

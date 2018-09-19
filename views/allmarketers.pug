@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    != messages('message', locals)
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1.h2 #{customers}
+    ul.list-group
+      each mkt, i in marketers
+        li.list-group-item
+          h6.a.customerlist(href="/customer/details/"+mkt._id)= mkt.fullname
+        //  if user
+            if user.id=mkt.id
+              a.btn.editbtn.btn-info.btn-sm(href="/customer/details/edit/"+mkt._id)
+                span(data-feather='edit')
+                |                   edit

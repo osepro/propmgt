@@ -1,0 +1,28 @@
+{
+  "name": "propertymgt",
+  "version": "1.0.0",
+  "description": "Property/Mortgage Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Ose Agbadu",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "dateformat": "^3.0.3",
+    "express": "^4.16.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.2.14",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "save": "^2.3.2",
+    "x": "^0.1.2"
+  }
+}

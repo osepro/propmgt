@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1.h2 #{pageheader}
+    section.card
+      .card-header
+          h7.font-weight-normal 
+            span(data-feather='info') 
+            |             Basic Info
+      .card-body  
+        h6.font-weight-normal Name: #{cus_detail.Firstname} #{cus_detail.Lastname}
+        h6.font-weight-normal Email: #{cus_detail.Email}
+        h6.font-weight-normal Phone No: #{cus_detail.PhoneNo}
+        h6.font-weight-normal Current Address: #{cus_detail.Address}
+        h6.font-weight-normal Marketer: #{cus_detail.Marketer}
+    br
+    section.card
+      .card-header
+          h7.font-weight-normal 
+            span(data-feather='home') 
+            |           Property Details
+      .card-body  
+          h6.font-weight-normal Property Location: #{cus_detail.PropertyLocation}
+          h6.font-weight-normal Number of Plots: #{cus_detail.PlotSize}
+          h6.font-weight-normal Property Cost: 
+            span ₦#{cus_detail.PropertyCost}
+            input.propcost(type='text', value=cus_detail.PropertyCost, hidden='') 
+    br
+    section.card
+      .card-header
+          h7.font-weight-normal 
+            span(data-feather='credit-card') 
+            |           Payment History
+      .card-body  
+          span.font-weight-bold.initpaid ₦ #{cus_detail.InitialDeposit}
+          input.slider(type='text')
+          a.paidlink(href="#")
+            //.paid.font-weight-bold Paid
+            input.cus-paid(type='text', value=cus_detail.InitialDeposit, hidden='') 
+            //.balance.mr-2.font-weight-bold Balance
+          span.font-weight-bold.initbal ₦ #{cus_detail.Balance} 
+          input.cus-unpaid(type='text', value=cus_detail.Balance, hidden='')
+      br

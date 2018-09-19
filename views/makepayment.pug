@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    != messages('message', locals)
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1 #{pageheader}
+    section.card
+      .card-header
+        h7.font-weight-normal 
+          span(data-feather='info') 
+          |             Customer Info
+      .card-body  
+        h6.font-weight-normal Name: #{cus_detail.Firstname} #{cus_detail.Lastname}
+        h6.font-weight-normal Email: #{cus_detail.Email}
+        h6.font-weight-normal Phone No: #{cus_detail.PhoneNo}
+        h6.font-weight-normal Current Address: #{cus_detail.Address}
+        h6.font-weight-normal Property Cost: #{cus_detail.PropertyCost}
+        h6.font-weight-normal Property Location: #{cus_detail.PropertyLocation}
+        h6.font-weight-normal Marketer: #{cus_detail.Marketer}
+    br
+    section.card
+      .card-header
+        h7.font-weight-normal 
+          span(data-feather='dollar-sign') 
+          |             Payment
+      .card-body  
+        form(method='POST', action='/customer/makepayment/edit/'+cus_detail._id)
+          #form-group
+            label Enter Amount:
+            input.form-control(name='amount',type='Number' required)
+            input(type='hidden', name='custid', value=cus_detail._id required)
+            br
+            input.btn.btn-primary(type='submit',value='Make Payment') 

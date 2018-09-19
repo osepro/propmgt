@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  //h1 #{customers}
+  ul.list-group.customerlist
+    each customer, i in customer_res
+      li.list-group-item
+        a(href="/customer/details/"+customer._id)= customer.Firstname +" "+ customer.Lastname +" "+ customer.Email
+        if user
+          if user.id=customer.id
+            a.btn.editbtn.btn-info.btn-sm(href="/customer/details/edit/"+customer._id)
+              span.glyphicon.glyphicon-pencil
+                |  edit

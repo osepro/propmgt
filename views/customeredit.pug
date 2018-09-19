@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+    != messages('message', locals)
+    .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+      h1 #{pageheader}
+    form(method='POST', action='/customer/details/edit/'+cus_detail._id)
+      #form-group
+        label First name:
+        input.form-control(name='firstname',type='text',value=cus_detail.Firstname)
+        br
+      #form-group
+        label Last name:
+        input.form-control(name='lastname',type='text',value=cus_detail.Lastname)
+        br
+      #form-group
+        label Email:
+        input.form-control(name='email',type='text',value=cus_detail.Email)
+        br
+      #form-group
+        label Phone No:
+        input.form-control(name='phoneno',type='text',value=cus_detail.PhoneNo)
+        br
+      #form-group
+        label Current Address:
+        input.form-control(name='currentaddress',type='text',value=cus_detail.Address)
+        br
+      #form-group
+        label Property Location:
+        input.form-control(name='propertylocation',type='text',value=cus_detail.PropertyLocation)
+        br
+      #form-group
+        label Property Cost:
+        input.form-control(name='propertycost',type='text',value=cus_detail.PropertyCost)
+        br
+      #form-group
+        label Plot size:
+        input.form-control(name='plotsize',type='text',value=cus_detail.PlotSize)
+        br
+      #form-group
+        label Initial Deposit:
+        input.form-control(name='initialdeposit',type='text',value=cus_detail.InitialDeposit)
+        br
+      input.btn.btn-primary(type='submit',value='Update Customer') 
+      
+      a.btn.btn-danger.delete-customer(href='#',data-id=cus_detail._id) Delete Customer
