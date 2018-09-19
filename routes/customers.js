@@ -5,7 +5,7 @@ const dateFormat = require('dateformat');
 // Call Customer Model
 let Cus=require('../models/customers');
 
-let Pay=require('../models/Payment');
+let Pay=require('../models/payment');
 
 router.get('/register',ensureAuthenticated,(reg,res) => {
   res.render('register', {
